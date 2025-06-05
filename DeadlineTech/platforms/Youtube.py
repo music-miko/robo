@@ -43,12 +43,12 @@ def extract_video_id(link: str) -> str:
 
     raise ValueError("Invalid YouTube link provided.")
 def apii_dl(video_id: str) -> str:
-    api_url = f"http://172.104.130.158:8000/download/song/{video_id}"
+    api_url = f"http://178.16.139.205:8000/download/song/{video_id}"
     file_path = os.path.join("downloads", f"{video_id}.mp3")
 
     # Check if file already exists
     if os.path.exists(file_path):
-        print(f"{file_path} already exists. Skipping download.")
+        print(f"Song {file_path} already exists. Skipping download.")
         return file_path
 
     # Download the file
@@ -59,7 +59,7 @@ def apii_dl(video_id: str) -> str:
         with open(file_path, 'wb') as f:
             for chunk in response.iter_content(chunk_size=8192):
                 f.write(chunk)
-        print(f"Downloaded {file_path}")
+        print(f"Song Downloaded Successfully {file_path} ✅")
         return file_path
     else:
         print(f"Failed to download {video_id}. Status: {response.status_code}")
@@ -70,12 +70,12 @@ import os
 import requests
 
 def api_dl(video_id: str) -> str:
-    api_url = f"http://172.104.130.158:8000/download/song/{video_id}"
+    api_url = f"http://178.16.139.205:8000/download/song/{video_id}"
     file_path = os.path.join("downloads", f"{video_id}.mp3")
 
     # Check if file already exists
     if os.path.exists(file_path):
-        print(f"{file_path} already exists. Skipping download.")
+        print(f"Song {file_path} already exists. Skipping download.")
         return file_path
 
     try:
@@ -86,7 +86,7 @@ def api_dl(video_id: str) -> str:
                 with open(file_path, 'wb') as f:
                     for chunk in response.iter_content(chunk_size=8192):
                         f.write(chunk)
-                print(f"Downloaded {file_path}")
+                print(f"Song Downloaded Successfully {file_path} ✅")
                 return file_path
             else:
                 print(f"Failed to download {video_id}. Status: {response.status_code}")
