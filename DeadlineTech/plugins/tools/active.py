@@ -35,7 +35,7 @@ def generate_summary_text(voice_count, video_count):
         "━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🔊 <b>Voice Chats:</b> <code>{voice_count}</code>\n"
         f"🎥 <b>Video Chats:</b> <code>{video_count}</code>\n"
-        f"📞 <b>Total:</b> <code>{total}</code>\n"
+        f"📞 <b>Total Chats:</b> <code>{total}</code>\n"
         f"🕒 <b>Updated:</b> <code>{get_current_time()}</code>"
     )
 
