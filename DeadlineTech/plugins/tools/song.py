@@ -64,10 +64,10 @@ async def remove_file_later(path: str, delay: int = 300):
 async def song_command(client: Client, message: Message):
     if len(message.command) < 2:
         return await message.reply_text(
-            "**Usage:**\n"
-            "`/song <YouTube URL or song name>`\n\n"
-            "Example:\n`/song https://youtu.be/dQw4w9WgXcQ`\n"
-            "or\n`/song Despacito`"
+            "<b>Usage:</b>\n"
+            "<code>/song <YouTube URL or song name></code>\n\n"
+            "Example:\n<code>/song https://youtu.be/dQw4w9WgXcQ</code>\n"
+            "or\n<code>/song Despacito</code>"
         )
 
     query = message.text.split(None, 1)[1].strip()
@@ -143,7 +143,7 @@ async def send_audio_by_video_id(client: Client, message: Message, video_id: str
             title=title,
             performer="DeadlineTech Bot",
             duration=0,  # Optionally parse duration into seconds
-            caption=f"🎵 **{title}**\n🕒 Duration: {duration}\n\nPowered by Team DeadlineTech"
+            caption=f"🎵 <b>{title}</b>\n🕒 Duration: {duration}\n\nPowered by <a href="https://t.me/DeadlineTechTeam">Team DeadlineTech</a>"
         )
         # Schedule file deletion after 5 mins
         asyncio.create_task(remove_file_later(file_path, delay=300))
