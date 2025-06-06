@@ -15,9 +15,7 @@ MIN_FILE_SIZE = 51200
 DOWNLOADS_DIR = "downloads"
 SENT_TRACKS = set()
 
-button = [
-                [InlineKeyboardButton("Music 🎶", url=f"https://t.me/DeadlineTechMusic")]
-            ]
+button = [[InlineKeyboardButton("Music 🎶", url=f"https://t.me/DeadlineTechMusic")]]
 
 
 # Extract YouTube video ID from URLs or return None
