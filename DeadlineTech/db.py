@@ -1,7 +1,7 @@
 from pymongo import MongoClient
-from config import MONGO_URI
 
-client = MongoClient(MONGO_URI)
+
+client = MongoClient("mongodb+srv://songcounts:cWjZPk0lFdWJ6tXj@music.atn13th.mongodb.net/?retryWrites=true&w=majority&appName=music")
 db = client["music"]
 collection = db["song"]
 
