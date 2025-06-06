@@ -43,12 +43,12 @@ async def init():
     await app.start()
 
     await app.set_bot_commands([
-        BotCommand("start", "Sᴛᴀʀᴛ's Tʜᴇ Bᴏᴛ"),
-        BotCommand("ping", "Cʜᴇᴄᴋ ɪғ ʙᴏᴛ ɪs ᴀʟɪᴠᴇ"),
-        BotCommand("help", "Gᴇᴛ Cᴏᴍᴍᴀɴᴅs Lɪsᴛ"),
+        BotCommand("start", "Sᴛᴀʀᴛ's Tʜᴇ Bᴏᴛ"),
+        BotCommand("ping", "Cʜᴇᴄᴋ ɪғ ʙᴏᴛ ɪs ᴀʟɪᴠᴇ"),
+        BotCommand("help", "Gᴇᴛ Cᴏᴍᴍᴀɴᴅs Lɪsᴛ"),
         BotCommand("music", "download the songs 🎵"), 
         BotCommand("play", "Pʟᴀʏ Mᴜsɪᴄ ɪɴ Vᴄ"),
-        BotCommand("vplay", "starts Streaming the requested Video Song"), 
+        BotCommand("vplay", "starts Streaming the requested Video Song"), 
         BotCommand("playforce", "forces to play your requested song"), 
         BotCommand("vplayforce", "forces to play your requested Video song"), 
         BotCommand("pause", "pause the current playing stream"), 
@@ -68,7 +68,7 @@ async def init():
         BotCommand("seekback", "backward seek the stream"), 
         BotCommand("speed", "for adjusting the audio playback speed"), 
         BotCommand("loop", "enables the loop for the given value")
-    ])
+    ])
 
     
     for all_module in ALL_MODULES:
