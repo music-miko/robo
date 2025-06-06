@@ -80,8 +80,7 @@ def parse_duration(duration: str) -> int:
 async def song_command(client: Client, message: Message):
     if len(message.command) < 2:
         return await message.reply_text(
-            "🎧 <b>How to Use:</b> <code>/song &lt;YouTube URL or Song Name&gt;</code>\nExample: <code>/song Shape of You</code>",
-            parse_mode="html"
+            "🎧 <b>How to Use:</b> <code>/song &lt;YouTube URL or Song Name&gt;</code>\nExample: <code>/song Shape of You</code>"
         )
 
     query = message.text.split(None, 1)[1].strip()
@@ -109,8 +108,7 @@ async def song_command(client: Client, message: Message):
 
             await message.reply_text(
                 "🎶 <b>Select the song you want:</b>",
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode="html"
+                reply_markup=InlineKeyboardMarkup(buttons)
             )
 
         except Exception as e:
@@ -155,8 +153,7 @@ async def send_audio_by_video_id(client: Client, message: Message, video_id: str
             title=title,
             performer="DeadlineTech Bot",
             duration=duration,
-            caption=caption,
-            parse_mode="html"
+            caption=caption
         )
 
         # Forward to save channel
@@ -168,8 +165,7 @@ async def send_audio_by_video_id(client: Client, message: Message, video_id: str
                     title=title,
                     performer="DeadlineTech Bot",
                     duration=duration,
-                    caption=caption,
-                    parse_mode="html"
+                    caption=caption
                 )
             except Exception as e:
                 print(f"❌ Error saving to channel: {e}")
