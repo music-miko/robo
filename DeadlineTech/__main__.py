@@ -3,6 +3,7 @@
 import asyncio
 import importlib
 
+from pyrogram.types import BotCommand
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
@@ -40,6 +41,37 @@ async def init():
     except:
         pass
     await app.start()
+
+    await app.set_bot_commands([
+        BotCommand("start", "Sᴛᴀʀᴛ's Tʜᴇ Bᴏᴛ"),
+        BotCommand("clone", "start your music bot now"), 
+        BotCommand("ping", "Cʜᴇᴄᴋ ɪғ ʙᴏᴛ ɪs ᴀʟɪᴠᴇ"),
+        BotCommand("help", "Gᴇᴛ Cᴏᴍᴍᴀɴᴅs Lɪsᴛ"),
+        BotCommand("music", "download the songs 🎵"), 
+        BotCommand("play", "Pʟᴀʏ Mᴜsɪᴄ ɪɴ Vᴄ"),
+        BotCommand("vplay", "starts Streaming the requested Video Song"), 
+        BotCommand("playforce", "forces to play your requested song"), 
+        BotCommand("vplayforce", "forces to play your requested Video song"), 
+        BotCommand("pause", "pause the current playing stream"), 
+        BotCommand("resume", "resume the paused stream"), 
+        BotCommand("skip", "skip the current playing stream"), 
+        BotCommand("end", "end the current stream"), 
+        BotCommand("player", "get a interactive player panel"), 
+        BotCommand("queue", "shows the queued tracks list"), 
+        BotCommand("auth", "add a user to auth list"), 
+        BotCommand("unauth", "remove a user from the auth list"), 
+        BotCommand("authusers", "shows the list of the auth users"), 
+        BotCommand("cplay", "starts streaming the requested audio on channel"), 
+        BotCommand("cvplay", "Starts Streaming the video track on channel"), 
+        BotCommand("channelplay", "connect channel to a group and start streaming"), 
+        BotCommand("shuffle", "shuffle's the queue"), 
+        BotCommand("seek", "seek the stream to the given duration"), 
+        BotCommand("seekback", "backward seek the stream"), 
+        BotCommand("speed", "for adjusting the audio playback speed"), 
+        BotCommand("loop", "enables the loop for the given value")
+    ])
+
+    
     for all_module in ALL_MODULES:
         importlib.import_module("DeadlineTech.plugins" + all_module)
     LOGGER("DeadlineTech.plugins").info("Successfully Imported Modules...")
