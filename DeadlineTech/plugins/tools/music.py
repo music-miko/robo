@@ -157,8 +157,11 @@ async def send_audio_by_video_id(client: Client, message: Message, video_id: str
                 title=title,
                 performer="DeadlineTech Bot",
                 duration=duration,
-                caption=caption
-            )
+                caption=caption, 
+                reply_markup=InlineKeyboardMarkup([
+        [InlineKeyboardButton("🎶 Music", callback_data="music_menu")]
+    ])
+       )
             mark_song_as_sent(video_id)
         except Exception as e:
             print(f"❌ Error saving to channel: {e}")
