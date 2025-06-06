@@ -63,6 +63,15 @@ async def remove_file_later(path: str, delay: int = 600):
     except Exception as e:
         print(f"❌ Error deleting file {path}: {e}")
 
+# Delete Telegram audio message after delay
+async def delete_message_later(client: Client, chat_id: int, message_id: int, delay: int = 600):
+    await asyncio.sleep(delay)
+    try:
+        await client.delete_messages(chat_id, message_id)
+        print(f"🗑️ Deleted Telegram audio message: {message_id}")
+    except Exception as e:
+        print(f"❌ Error deleting message {message_id}: {e}")
+
 # Convert duration string to seconds
 def parse_duration(duration: str) -> int:
     parts = list(map(int, duration.split(":")))
@@ -128,52 +137,55 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
 
 # Send audio file to user and forward to channel
 async def send_audio_by_video_id(client: Client, message: Message, video_id: str):
-    try:
-        videos_search = VideosSearch(video_id, limit=1)
-        search_result = await videos_search.next()
-        video_info = search_result['result'][0] if search_result['result'] else None
-        title = video_info['title'] if video_info else "Unknown Title"
-        duration_str = video_info.get('duration', '0:00')
-        duration = parse_duration(duration_str)
-        video_url = video_info.get('link', None)
-    except Exception:
-        title = "Unknown Title"
-        duration_str = "0:00"
-        duration = 0
-        video_url = None
+    if video_id in SENT_TRACKS:
+        return await message.reply_text("✅ This song has already been downloaded and saved.")
 
-    file_path = await asyncio.to_thread(api_dl, video_id)
+    try:
+        videos_search = VideosSearch(video_id, limit=1)
+        search_result = await videos_search.next()
+        video_info = search_result['result'][0] if search_result['result'] else None
+        title = video_info['title'] if video_info else "Unknown Title"
+        duration_str = video_info.get('duration', '0:00')
+        duration = parse_duration(duration_str)
+        video_url = video_info.get('link', None)
+    except Exception:
+        title = "Unknown Title"
+        duration_str = "0:00"
+        duration = 0
+        video_url = None
 
-    if file_path:
-        caption = f"🎧 <b>{title}</b>\n🕒 Duration: {duration_str}"
-        if video_url:
-            caption += f"\n🔗 <a href=\"{video_url}\">Watch on YouTube</a>"
-        caption += "\n\n🎵 Powered by <a href=\"https://t.me/DeadlineTechTeam\">Team DeadlineTech</a>"
+    file_path = await asyncio.to_thread(api_dl, video_id)
 
-        audio_msg = await message.reply_audio(
-            audio=file_path,
-            title=title,
-            performer="DeadlineTech Bot",
-            duration=duration,
-            caption=caption,
-            parse_mode="html"
-        )
+    if file_path:
+        caption = f"🎧 <b>{title}</b>\n🕒 Duration: {duration_str}"
+        if video_url:
+            caption += f"\n🔗 <a href=\"{video_url}\">Watch on YouTube</a>"
+        caption += "\n\n🎵 Powered by <a href=\"https://t.me/DeadlineTechTeam\">DeadlineTech</a>"
 
-        # Forward to save channel
-        if SAVE_CHANNEL_ID:
-            try:
-                await client.send_audio(
-                    chat_id=SAVE_CHANNEL_ID,
-                    audio=file_path,
-                    title=title,
-                    performer="DeadlineTech Bot",
-                    duration=duration,
-                    caption=caption,
-                    parse_mode="html"
-                )
-            except Exception as e:
-                print(f"❌ Error saving to channel: {e}")
+        audio_msg = await message.reply_audio(
+            audio=file_path,
+            title=title,
+            performer="DeadlineTech Bot",
+            duration=duration,
+            caption=caption
+        )
 
-        asyncio.create_task(remove_file_later(file_path, delay=600))
-    else:
-        await message.reply_text("❌ Failed to download the song. Please try again later.")
+        # Forward to save channel only once
+        if SAVE_CHANNEL_ID and video_id not in SENT_TRACKS:
+            try:
+                await client.send_audio(
+                    chat_id=SAVE_CHANNEL_ID,
+                    audio=file_path,
+                    title=title,
+                    performer="DeadlineTech Bot",
+                    duration=duration,
+                    caption=caption
+                )
+                SENT_TRACKS.add(video_id)
+            except Exception as e:
+                print(f"❌ Error saving to channel: {e}")
+
+        asyncio.create_task(remove_file_later(file_path, delay=600))
+        asyncio.create_task(delete_message_later(client, message.chat.id, audio_msg.id, delay=600))
+    else:
+        await message.reply_text("❌ Failed to download the song. Please try again later.")
