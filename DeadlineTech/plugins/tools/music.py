@@ -171,8 +171,8 @@ async def send_audio_by_video_id(client: Client, message: Message, video_id: str
             caption=caption
     )
 
-        # Forward to save channel only once
-        if SAVE_CHANNEL_ID and video_id not in SENT_TRACKS:
+    # Forward to save channel only once
+    if SAVE_CHANNEL_ID and video_id not in SENT_TRACKS:
             try:
                 await client.send_audio(
                     chat_id=SAVE_CHANNEL_ID,
