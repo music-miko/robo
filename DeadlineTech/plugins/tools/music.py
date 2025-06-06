@@ -144,7 +144,8 @@ async def send_audio_by_video_id(client: Client, message: Message, video_id: str
     try:
         videos_search = VideosSearch(video_id, limit=1)
         search_result = await videos_search.next()
-        video_info = search_result['result'][0] if search_result['result'] else None        title = video_info['title'] if video_info else "Unknown Title"
+        video_info = search_result['result'][0] if search_result['result'] else None     
+        title = video_info['title'] if video_info else "Unknown Title"
         duration_str = video_info.get('duration', '0:00')
         duration = parse_duration(duration_str)
         video_url = video_info.get('link', None)
