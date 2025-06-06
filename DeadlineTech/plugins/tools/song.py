@@ -15,6 +15,11 @@ MIN_FILE_SIZE = 51200
 DOWNLOADS_DIR = "downloads"
 SENT_TRACKS = set()
 
+button = [
+                [InlineKeyboardButton("Music 🎶", url=f"https://t.me/DeadlineTechMusic")]
+            ]
+
+
 # Extract YouTube video ID from URLs or return None
 def extract_video_id(link: str) -> str | None:
     patterns = [
@@ -166,7 +171,8 @@ async def send_audio_by_video_id(client: Client, message: Message, video_id: str
             title=title,
             performer="DeadlineTech Bot",
             duration=duration,
-            caption=caption
+            caption=caption, 
+            reply_markup=InlineKeyboardMarkup(button)
         )
 
         # Forward to save channel only once
