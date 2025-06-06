@@ -27,6 +27,7 @@ ADS_MODE = getenv("ADS_MODE", None)
 
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", None))
+SAVE_CHANNEL_ID = int(getenv("SAVE_CHANNEL_ID", "-1002829671432"))
 
 # Get this value from @Harry_RoxBot on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID", 6848223695))
