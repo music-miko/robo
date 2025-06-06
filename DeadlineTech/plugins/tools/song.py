@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.enums import ChatAction
 from youtubesearchpython.__future__ import VideosSearch
-
+from DeadlineTech import app
 from config import API_KEY, API_BASE_URL
 
 MIN_FILE_SIZE = 51200
