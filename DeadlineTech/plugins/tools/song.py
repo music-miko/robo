@@ -90,7 +90,7 @@ def parse_duration(duration: str) -> int:
 async def song_command(client: Client, message: Message):
     if len(message.command) < 2:
         return await message.reply_text(
-            "🎧 <b>How to Use:</b> <code>/song &lt;YouTube URL or Song Name&gt;</code>\nExample: <code>/song Shape of You</code>"
+            "🎧 <b>How to Use:</b> <code>/music <YouTube URL or Song Name> </code>\nExample: <code>/song Shape of You</code>"
         )
 
     query = message.text.split(None, 1)[1].strip()
@@ -102,7 +102,7 @@ async def song_command(client: Client, message: Message):
     else:
         await message.reply_text("🔍 Searching for your song...")
         try:
-            videos_search = VideosSearch(query, limit=5)
+            videos_search = VideosSearch(query, limit=3)
             search_result = await videos_search.next()
             results = search_result.get('result', [])
 
