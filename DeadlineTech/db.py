@@ -1,9 +1,9 @@
 from pymongo import MongoClient
-from config import MONGO_URI, MONGO_DB, MONGO_COLLECTION
+from config import MONGO_URI
 
 client = MongoClient(MONGO_URI)
-db = client[MONGO_DB]
-collection = db[MONGO_COLLECTION]
+db = client["music"]
+collection = db["song"]
 
 def is_song_sent(video_id: str) -> bool:
     return collection.find_one({"video_id": video_id}) is not None
