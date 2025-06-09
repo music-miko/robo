@@ -1,1 +1,21 @@
-# Paste your cookies here
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.youtube.com	TRUE	/	TRUE	1782468323	PREF	f6=40000000&tz=Asia.Calcutta&f7=100
+.youtube.com	TRUE	/	TRUE	1747909099	GPS	1
+.youtube.com	TRUE	/	TRUE	1779444306	__Secure-1PSIDTS	sidts-CjIBjplskMSFnDdUrL2R2DTc1ght8pRQYDTgHsFKQ8XHVltgoVbSe42Ee_wIB5ypC9eqBRAA
+.youtube.com	TRUE	/	TRUE	1779444306	__Secure-3PSIDTS	sidts-CjIBjplskMSFnDdUrL2R2DTc1ght8pRQYDTgHsFKQ8XHVltgoVbSe42Ee_wIB5ypC9eqBRAA
+.youtube.com	TRUE	/	FALSE	0	HSID	AzzjtVf2jBGuldzZN
+.youtube.com	TRUE	/	TRUE	0	SSID	AbPnMGC-zh0ZzIA02
+.youtube.com	TRUE	/	FALSE	0	APISID	RtnhGa0kenPIS1Xf/AgDBAkihgBlykcotP
+.youtube.com	TRUE	/	TRUE	0	SAPISID	vyDylbDNamx8DIEX/AzXaoW0osQo0Gs58w
+.youtube.com	TRUE	/	TRUE	0	__Secure-1PAPISID	vyDylbDNamx8DIEX/AzXaoW0osQo0Gs58w
+.youtube.com	TRUE	/	TRUE	0	__Secure-3PAPISID	vyDylbDNamx8DIEX/AzXaoW0osQo0Gs58w
+.youtube.com	TRUE	/	FALSE	0	SID	g.a000xAjsMMbUo--U-tNxpnVEoFukXR-PTbk8zGNkwi9xYZ--un4p3NZDviokvzwUwVfL1xOzggACgYKAcYSARISFQHGX2MibEQLP68aXEpZx8uCxgX1KBoVAUF8yKrXkUZbgrtGpqiBmqnx3Qsw0076
+.youtube.com	TRUE	/	TRUE	0	__Secure-1PSID	g.a000xAjsMMbUo--U-tNxpnVEoFukXR-PTbk8zGNkwi9xYZ--un4pCfMsy_VoAFF4LnXnSAHQ1QACgYKARYSARISFQHGX2Mi9fJ5KPRRHpYnvm3XFJxr0hoVAUF8yKolZY9QUqVELN6J2OGGucIr0076
+.youtube.com	TRUE	/	TRUE	0	__Secure-3PSID	g.a000xAjsMMbUo--U-tNxpnVEoFukXR-PTbk8zGNkwi9xYZ--un4pJWN9FX6pZy0XGmtQd6I_tQACgYKAYUSARISFQHGX2MiFIPpLkMnxgbbOc7lzvF1aBoVAUF8yKpmv8eT_cRDXw0_d0jhRnG50076
+.youtube.com	TRUE	/	TRUE	1782468307	LOGIN_INFO	AFmmF2swRAIgHX3tsOJ1uyABly30zuvdIYHZF7CzTwXzWaqKl65-v2sCIHbd0dHS4QQq6qgdWSfj-C_QTcvrCSfw0Ku2nSNf29cd:QUQ3MjNmeFZhTkZ1ZTJEVjFkdmN4cFltdUw3NWJldlgyRnJkVTRfSFdIWUh6WWdkcmY1RXJxemIyR2RrWmVPM3d6bi1ITm9pZnI1QWswcjV5TzRLN2J4alpJUmIyY2QtV1RqRGFQdDJqRTFoUE43QzVYNFI4V090NzVET1JFZlg3cmx2SFBXOXdxNk5famtVNGNPSzFCZGVQb3FWdDJwYnBB
+.youtube.com	TRUE	/	FALSE	1779444433	SIDCC	AKEyXzUtxLpxmwpq2NCssa9OIvC-TRxZKH6WTuZq18Bw7pggDVYjUpyIwbGOXZfRORsVPtAU
+.youtube.com	TRUE	/	TRUE	1779444433	__Secure-1PSIDCC	AKEyXzWwmy0hEgMN6JCSmqSGxLDgyTSFtyIt5RnKwcTgqv4eTO3Fx0wvCMWPcRF1eRGDAyUIZQ
+.youtube.com	TRUE	/	TRUE	1779444433	__Secure-3PSIDCC	AKEyXzXTNXnetoYbIcnPcNKyDKGamGts6M6cfA4gRBf6U_qAITXq0ZANRApR7Wyfvh3EVpH8
