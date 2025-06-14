@@ -1,7 +1,6 @@
 # Powered by DeadlineTech
 
 from pyrogram import Client, filters
-from DeadlineTech.utils.crash_reporter import sudo_alert_on_crash
 from DeadlineTech import app
 from pyrogram.types import Message, ChatMemberUpdated
 from pyrogram.enums import ChatMemberStatus
