@@ -10,7 +10,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.enums import ChatAction
 from youtubesearchpython.__future__ import VideosSearch
-from config import API_KEY, API_BASE_URL, SAVE_CHANNEL_ID
+from config import API_KEY, API_URL, SAVE_CHANNEL_ID
 from DeadlineTech import app
 from DeadlineTech.db import get_saved_file_id, mark_song_as_sent, is_song_sent
 
